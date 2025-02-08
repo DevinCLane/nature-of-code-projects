@@ -28,7 +28,7 @@ class Walker {
     }
 }
 
-function sketch1(p: p5) {
+function sketch(p: p5) {
     let walker: Walker;
 
     p.setup = () => {
@@ -36,6 +36,17 @@ function sketch1(p: p5) {
         walker = new Walker(p);
         p.background(255);
     };
+
+    const clearCanvas = () => {
+        p.background(255);
+        walker.reset();
+    };
+
+    // clear button
+    const clearBtn = document.getElementsByClassName("clearBtn");
+    for (const btn of clearBtn) {
+        btn.addEventListener("click", clearCanvas);
+    }
 
     p.windowResized = () => {
         p.resizeCanvas(500, 500);
@@ -48,30 +59,8 @@ function sketch1(p: p5) {
     };
 }
 
-function sketch2(p: p5) {
-    let walker: Walker;
+const sketch1div = document.getElementById("sketch1div");
 
-    p.setup = () => {
-        p.createCanvas(500, 500);
-        walker = new Walker(p);
-        p.background(255);
-    };
-
-    p.windowResized = () => {
-        p.resizeCanvas(500, 500);
-        walker.reset();
-    };
-
-    p.draw = () => {
-        walker.step();
-        walker.show();
-    };
-}
-
-const firstSketch = document.getElementById("sketch1");
-const secondSketch = document.getElementById("sketch2");
-
-if (firstSketch && secondSketch) {
-    new p5(sketch1, firstSketch);
-    new p5(sketch2, secondSketch);
+if (sketch1div) {
+    new p5(sketch, sketch1div);
 }
