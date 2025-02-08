@@ -7,8 +7,26 @@
         <link rel="stylesheet" href="/src/style.css" />
     </head>
     <body>
-        <p><a href="/index.html">Home</a></p>
-        <h1>Randomness</h1>
+        <div id="container">
+            <header>
+                <p><a href="/index.html">Home</a></p>
+                <h1>Randomness</h1>
+            </header>
+            <main>
+                <div class="sketch-container">
+                    <h2>Random Walker 1</h2>
+                    <p>
+                        A random walker that can step to any neighboring pixel
+                        or stay put (9 possible choices)
+                    </p>
+                    <div id="sketch1"></div>
+                </div>
+                <div class="sketch-container">
+                    <h2>Random Walker 2</h2>
+                    <div id="sketch2"></div>
+                </div>
+            </main>
+        </div>
         <script type="module" src="./script.ts"></script>
     </body>
 </html>
