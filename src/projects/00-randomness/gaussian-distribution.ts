@@ -18,7 +18,7 @@ class Paint {
 
     drawPoint() {
         this.p.stroke(0);
-        const color = this.p.randomGaussian(180, 20);
+        const color = this.p.randomGaussian(180, 30);
         this.p.fill(color, 100, 100);
         this.p.circle(this.x, this.y, 20);
     }
