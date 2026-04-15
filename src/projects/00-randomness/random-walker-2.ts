@@ -64,10 +64,9 @@ function sketch(p: p5) {
     };
 
     // clear button
-    const clearBtn = document.getElementsByClassName("clearBtn");
-    for (const btn of clearBtn) {
-        btn.addEventListener("click", clearCanvas);
-    }
+    document
+        .getElementById("clearBtn2")
+        ?.addEventListener("click", clearCanvas);
 
     p.draw = () => {
         walker.step();

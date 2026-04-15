@@ -43,10 +43,9 @@ function sketch(p: p5) {
     };
 
     // clear button
-    const clearBtn = document.getElementsByClassName("clearBtn");
-    for (const btn of clearBtn) {
-        btn.addEventListener("click", clearCanvas);
-    }
+    document
+        .getElementById("clearBtn1")
+        ?.addEventListener("click", clearCanvas);
 
     p.windowResized = () => {
         p.resizeCanvas(500, 500);
